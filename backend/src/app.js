@@ -6,6 +6,7 @@ const db = require("./config/db");
 
 const authRoutes = require("./routes/auth.routes");
 const questionsRoutes = require("./routes/questions.routes");
+const quizRoutes = require("./routes/quiz.routes");
 
 const app = express();
 app.use(express.json());
@@ -26,5 +27,6 @@ app.get("/db-test", async (req, res, next) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/questions", questionsRoutes);
+app.use("/api/quiz", quizRoutes);
 
 module.exports = { app };
